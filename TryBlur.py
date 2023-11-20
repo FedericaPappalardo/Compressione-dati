@@ -44,7 +44,7 @@ def blur_faces_and_save(image_path, output_folder):
     cv2.imwrite(output_path, image)
 
 # Sostituisci "input_folder" con il percorso della cartella contenente le immagini da elaborare
-input_folder = "C:\\Users\\carmi\\Desktop\\Compressioni\\immagini_da_video"
+input_folder = "path"
 
 # Sostituisci "output_folder" con il percorso della nuova cartella in cui salvare le immagini sfocate
 output_folder = "percorso_cartella_output"

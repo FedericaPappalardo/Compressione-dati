@@ -33,7 +33,7 @@ def crea_video(cartella_immagini, percorso_output_video, fps=30):
     video.release()
 
 # Esempio di utilizzo
-img_path = 'C:\\Users\\carmi\\Desktop\\Compressioni\\percorso_cartella_output'
-video_path = 'C:\\Users\\carmi\\Desktop\\Compressioni\\percorso_cartella_output'
+img_path = 'pathimm'
+video_path = 'pathvideo'
 # Esempio di utilizzo
 crea_video(img_path, video_path)

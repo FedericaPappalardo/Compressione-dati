@@ -2,7 +2,7 @@ import cv2
 import os
 
 # Percorso al video
-video_path = 'C:\\Users\\carmi\\Downloads\\prova.mp4'
+video_path = 'percorso'
 
 # Apri il video
 cap = cv2.VideoCapture(video_path)
