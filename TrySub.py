@@ -79,8 +79,9 @@ input_folder = "C:\\Users\\carmi\\Desktop\\Compressione dati\\frame_images"
 # Sostituisci "output_folder" con il percorso della nuova cartella in cui salvare le immagini modificate
 output_folder = "C:\\Users\\carmi\\Desktop\\Compressione dati\\frame_modificati"
 
-# Sostituisci "replacement_image_path" con il percorso dell'immagine da utilizzare come sostituto per il volto
-replacement_image_path = "C:\\Users\\carmi\\Downloads\\Luca.jpeg"
+# Sostituisci "replacement_image_path" con il percorso dell'immagine da
+#  utilizzare come sostituto per il volto
+replacement_image_path = "C:\\Users\\carmi\\Downloads\\Luca-transformed.png"
 
 # Assicurati che la cartella di output esista, altrimenti creala
 if not os.path.exists(output_folder):
