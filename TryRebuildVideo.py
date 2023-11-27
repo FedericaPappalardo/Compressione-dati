@@ -1,13 +1,14 @@
 import subprocess
 import os
+import TryFFMPEG
 
-def ricomporre_video_da_frame(frames_folder, audio_file, output_path):
+def ricomporre_video_da_frame(frames_folder, audio_file, output_path, framerate = 30):
     # Assicurati che la cartella di output esista, altrimenti creala
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
     comando = [
         'C:\\Users\\carmi\\Desktop\\Compressione dati\\ffmpeg-2023-11-22-git-0008e1c5d5-full_build\\ffmpeg-2023-11-22-git-0008e1c5d5-full_build\\bin\\ffmpeg.exe',
-        '-framerate', '30',  # Sostituisci con l'fps corretto
+        '-framerate', framerate,  # Sostituisci con l'fps corretto, da ottenere tramite la funzione get_framerate
         '-i', os.path.join(frames_folder, 'frame_%04d_modified.jpg'),  # Sostituisci con il pattern corretto
         '-i', audio_file,
         '-c:v', 'libx264',
