@@ -16,7 +16,7 @@ def main(input_video, output_folder, replacement_image_path):
     output_video = os.path.join(output_folder, "output_video.mp4")
     framerate = TryFFMPEG.get_framerate(input_video)
 
-    TryRebuildVideo.ricomporre_video_da_frame(output_folder, audio_file, output_folder, framerate)
+    TryRebuildVideo.ricomporre_video_da_frame(output_folder, audio_file, output_video, framerate)
 
 
 if __name__ == "__main__":
