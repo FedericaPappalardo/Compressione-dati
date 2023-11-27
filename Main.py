@@ -20,4 +20,7 @@ def main(input_video, output_folder, replacement_image_path):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2], sys.argv[3])
+    if len(sys.argv) != 4:
+        print("Errore! uso: Main.py input_video output_folder replacement_image_path")
+    else:
+        main(sys.argv[1], sys.argv[2], sys.argv[3])
