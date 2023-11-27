@@ -1,0 +1,8 @@
+Per eseguire correttamente il codice sviluppato:
+1)Run TryFFEMPEG per la divisione del video in frame e l'estrazione dell'audio.
+2)Run TrySub per effettuare la sostituzione frame per frame dei volti contenuti nel video con i volti delle immagini sostitutive.
+3)Run TryRebuildVideo per ricostruire il video con le immagini con i volti sostitutivi e l'audio estratto al punto 1.
+
+Il punto 1 genera #2 cartelle, 1 conterrà tutti i frame del video, la seconda conterrà l'estratto audio del video dato in input.
+Il punto 2 genera #1 cartella contenente tutti i frame della cartella generata al punto 1 ma con i volti sostitutivi.
+Il punto 3 genera #1 ricostruisce l'intero video dandolo in output, partendo dalla cartella contenente i frame "modificati" e la cartella contenente l'audio estratto al punto 1.
