@@ -10,6 +10,8 @@ def ricomporre_video_da_frame(frames_folder, audio_file, output_path, framerate 
     audio_file = os.path.join(audio_path, 'audio.mp3')
     frames_path = os.path.join(frames_folder, 'frame_images')
 
+    output_path = os.path.join(output_path, 'output_video.mp4')
+
     comando = [
         #'C:\\Users\\carmi\\Desktop\\Compressione dati\\ffmpeg-2023-11-22-git-0008e1c5d5-full_build\\ffmpeg-2023-11-22-git-0008e1c5d5-full_build\\bin\\ffmpeg.exe',
         'ffmpeg',
