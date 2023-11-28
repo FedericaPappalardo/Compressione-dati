@@ -53,7 +53,10 @@ def get_framerate(video_input):
         video_input
     ]
 
-    subprocess.run(comando)
+    result = subprocess.run(comando, capture_output = True, text = True)
+    framerate = result.stdout
+    print("Il framerate rilevato é: ", framerate)
+    return framerate
 
 # Esempio di utilizzo
 # dividere_in_frame(video_input, output_folder, fps=1)
