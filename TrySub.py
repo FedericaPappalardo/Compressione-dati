@@ -73,22 +73,22 @@ def replace_faces_and_save(image_path, output_folder, replacement_image_path):
     else:
         print(f"Nessun volto rilevato in {replacement_image_path}")
 
-# Sostituisci "input_folder" con il percorso della cartella contenente le immagini da elaborare
-input_folder = "C:\\Users\\carmi\\Desktop\\Compressione dati\\frame_images"
-
-# Sostituisci "output_folder" con il percorso della nuova cartella in cui salvare le immagini modificate
-output_folder = "C:\\Users\\carmi\\Desktop\\Compressione dati\\frame_modificati"
-
-# Sostituisci "replacement_image_path" con il percorso dell'immagine da
-#  utilizzare come sostituto per il volto
-replacement_image_path = "C:\\Users\\carmi\\Downloads\\Luca-transformed.png"
-
-# Assicurati che la cartella di output esista, altrimenti creala
-if not os.path.exists(output_folder):
-    os.makedirs(output_folder)
-
-# Cicla attraverso tutte le immagini nella cartella di input
-for filename in os.listdir(input_folder):
-    if filename.endswith(".jpg") or filename.endswith(".png"):
-        image_path = os.path.join(input_folder, filename)
-        replace_faces_and_save(image_path, output_folder, replacement_image_path)
+## Sostituisci "input_folder" con il percorso della cartella contenente le immagini da elaborare
+#input_folder = "C:\\Users\\carmi\\Desktop\\Compressione dati\\frame_images"
+#
+## Sostituisci "output_folder" con il percorso della nuova cartella in cui salvare le immagini modificate
+#output_folder = "C:\\Users\\carmi\\Desktop\\Compressione dati\\frame_modificati"
+#
+## Sostituisci "replacement_image_path" con il percorso dell'immagine da
+##  utilizzare come sostituto per il volto
+#replacement_image_path = "C:\\Users\\carmi\\Downloads\\Luca-transformed.png"
+#
+## Assicurati che la cartella di output esista, altrimenti creala
+#if not os.path.exists(output_folder):
+#    os.makedirs(output_folder)
+#
+## Cicla attraverso tutte le immagini nella cartella di input
+#for filename in os.listdir(input_folder):
+#    if filename.endswith(".jpg") or filename.endswith(".png"):
+#        image_path = os.path.join(input_folder, filename)
+#        replace_faces_and_save(image_path, output_folder, replacement_image_path)

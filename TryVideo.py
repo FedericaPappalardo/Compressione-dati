@@ -32,8 +32,8 @@ def crea_video(cartella_immagini, percorso_output_video, fps=30):
     # Rilascia l'oggetto VideoWriter
     video.release()
 
-# Esempio di utilizzo
-img_path = 'pathimm'
-video_path = 'pathvideo'
-# Esempio di utilizzo
-crea_video(img_path, video_path)
+## Esempio di utilizzo
+#img_path = 'pathimm'
+#video_path = 'pathvideo'
+## Esempio di utilizzo
+#crea_video(img_path, video_path)
