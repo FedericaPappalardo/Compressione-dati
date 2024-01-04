@@ -5,7 +5,8 @@ import os
 
 def estrai_audio(video_input, output_folder):
     # Crea una sottocartella per contenere l'audio
-    output_subfolder = os.path.join(output_folder, 'Estratto_audio_video')
+    #output_subfolder = os.path.join(output_folder, 'Estratto_audio_video')
+    output_subfolder = output_folder
     os.makedirs(output_subfolder, exist_ok=True)
 
     output_path = os.path.join(output_subfolder, 'audio.mp3')
@@ -26,10 +27,11 @@ def dividere_in_frame(video_input, output_folder, output_pattern='frame_%04d.jpg
     estrai_audio(video_input, output_folder)
 
     # Crea una sottocartella per contenere le immagini
-    output_subfolder = os.path.join(output_folder, 'frame_images')
+    #output_subfolder = os.path.join(output_folder, 'frame_images')
+    output_subfolder = output_folder
     os.makedirs(output_subfolder, exist_ok=True)
 
-    # Si dovrebbero eliminare i file nella cartella giá presenti
+    # Si dovrebbero eliminare i file giá presenti nella cartella
 
     output_path = os.path.join(output_subfolder, output_pattern)
 

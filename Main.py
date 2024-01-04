@@ -4,25 +4,27 @@ import sys
 import os
 import TryFFMPEG
 import TryRebuildVideo
+import TrySub
 
-def main(input_video, output_folder, replacement_image_path):
-    # TryFFMPEG.estrai_audio(input_video, output_folder)
-    TryFFMPEG.dividere_in_frame(input_video, output_folder)
+def main(input_video):
 
-#    for filename in os.listdir(output_folder):
-#        if filename.endswith(".jpg") or filename.endswith(".png"):
-#            image_path = os.path.join(input_folder, filename)
-#            TrySub.replace_faces_and_save(image_path, output_folder, replacement_image_path)
+    frame_folder = os.path.join(os.path.dirname(input_video), "extracted_frames")
+    TryFFMPEG.dividere_in_frame(input_video, frame_folder)
 
-    audio_file = os.path.join(output_folder, "audio.mp3")
-    output_video = os.path.join(output_folder, "output_video.mp4")
+    sub_frame_folder = os.path.join(os.path.dirname(input_video), "substituted_frames")
+    training_folder = os.path.join(os.path.dirname(input_video), "training")
+    imm_sost_folder = os.path.join(os.path.dirname(input_video), "immagini_per_sostituzione")
+    TrySub.esegui_sostituzione(frame_folder, training_folder, imm_sost_folder, sub_frame_folder)
+
+    audio_file = os.path.join(frame_folder, "audio.mp3")
+    output_video = os.path.join(os.path.dirname(input_video), "output_video.mp4")
     framerate = TryFFMPEG.get_framerate(input_video)
 
-    TryRebuildVideo.ricomporre_video_da_frame(output_folder, audio_file, output_video, framerate)
+    TryRebuildVideo.ricomporre_video_da_frame(sub_frame_folder, audio_file, output_video, framerate)
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Errore! uso: Main.py input_video output_folder replacement_image_path")
+    if len(sys.argv) != 2:
+        print("Errore! uso: Main.py input_video")
     else:
-        main(sys.argv[1], sys.argv[2], sys.argv[3])
+        main(sys.argv[1])
