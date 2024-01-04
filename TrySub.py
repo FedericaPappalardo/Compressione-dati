@@ -67,7 +67,8 @@ def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, 
     index = 0;
     for face_name in known_face_names:
         # Se ci sono piú facce conosciute che facce per la sostituzione, riutilizza le immagini partendo da 0
-        faces_dictionary[face_name] = faces_for_substitution[index % len(faces_for_substitution)]
+        sub_image_path = os.path.join(sub_images_folder, faces_for_substitution[index % len(faces_for_substitution)])
+        faces_dictionary[face_name] = estrai_volto_da_immagine(sub_image_path)
         index += 1
 
     # Load a sample picture and learn how to recognize it.
@@ -103,12 +104,10 @@ def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, 
                     print(name)
 
                 if name in faces_dictionary:
-                    volto_da_estrarre_path = os.path.join(sub_images_folder, faces_dictionary[name])
-                    #volto_da_estrarre_path = training_immages_array[best_match_index]
+                    #volto_da_estrarre_path = os.path.join(sub_images_folder, faces_dictionary[name])
+                    myimage = faces_dictionary[name]
                 else:
                     break
-
-                myimage = estrai_volto_da_immagine(volto_da_estrarre_path)
 
                 volto_ritagliato = pil_image.crop((left, top, right, bottom))
                 volto_ritagliato.convert("RGBA")
