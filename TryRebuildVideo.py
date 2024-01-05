@@ -20,9 +20,9 @@ def ricomporre_video_da_frame(frames_folder, audio_file, output_path, framerate 
         '-i', os.path.join(frames_path, 'frame_%04d_modified.jpg'),  # Sostituisci con il pattern corretto
         '-i', audio_file,
         '-c:v', 'libx264',
-        '-c:a', 'aac',
-        '-strict', 'experimental',
-        '-b:a', '192k',
+        '-c:a', 'copy',
+#        '-strict', 'experimental',
+#        '-b:a', '192k',
         '-shortest',
         output_path
     ]
