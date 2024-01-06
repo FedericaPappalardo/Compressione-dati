@@ -60,7 +60,7 @@ def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, 
     # Assegna ad ogni volto conosciuto un'immagine da utilizzare per la sostituzione tramite un dizionario
     faces_for_substitution = []
     for f in os.listdir(sub_images_folder):
-        if f.endswith(".jpg") or filename.endswith(".png"):
+        if f.endswith(".jpg") or f.endswith(".png"):
             faces_for_substitution.append(f)
 
     faces_dictionary = {}
@@ -122,8 +122,8 @@ def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, 
                 #    immagine_path = "C:\\Compressione-dati-main\Source\\uomo.jpg"
                 #    volto_da_estrarre_path = "C:\\Compressione-dati-main\Source\\uomo.jpg"
 
-        file_name = os.path.splitext(os.path.basename(image_path))[0]
-        # Crea il percorso per salvare l'immagine modificata
-        output_path = os.path.join(output_folder, f"{file_name}_modified.jpg")
-            # You can also save a copy of the new image to disk if you want by uncommenting this line
-        pil_image.save(output_path)
+            file_name = os.path.splitext(os.path.basename(image_path))[0]
+            # Crea il percorso per salvare l'immagine modificata
+            output_path = os.path.join(output_folder, f"{file_name}_modified.jpg")
+                # You can also save a copy of the new image to disk if you want by uncommenting this line
+            pil_image.save(output_path)
