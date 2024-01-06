@@ -9,14 +9,14 @@ def estrai_audio(video_input, output_folder):
     output_subfolder = output_folder
     os.makedirs(output_subfolder, exist_ok=True)
 
-    output_path = os.path.join(output_subfolder, 'audio.mp3')
+    output_path = os.path.join(output_subfolder, 'audio.mkv')
 
     comando = [
         #'C:\\Users\\carmi\\Desktop\\Compressione dati\\ffmpeg-2023-11-22-git-0008e1c5d5-full_build\\ffmpeg-2023-11-22-git-0008e1c5d5-full_build\\bin\\ffmpeg.exe',
         'ffmpeg',
         '-i', video_input,
         '-vn',  # Specifica che non vuoi video, solo audio
-        '-acodec', 'libmp3lame',  # Specifica il codec audio per il salvataggio come MP3
+        '-c:a', 'copy',  # Specifica il codec audio per il salvataggio come MP3
         output_path
     ]
 
