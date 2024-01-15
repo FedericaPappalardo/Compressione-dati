@@ -16,6 +16,7 @@ def estrai_volto_da_immagine(volto_da_estrarre_path):
     # Trova tutti i volti nell'immagine
     face_locations = face_recognition.face_locations(immagine)
     codifiche_volto_immagine = face_recognition.face_encodings(immagine, face_locations)
+    pil_image = None
 
     for codifica_volto in codifiche_volto_immagine:
         # Confronta la codifica del volto estratto con la codifica del volto dall'immagine
@@ -31,7 +32,7 @@ def estrai_volto_da_immagine(volto_da_estrarre_path):
 
     return pil_image
 
-def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, output_folder):
+def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, output_folder, generic_image_path = ""):
 
     #-----
     # Sostituisci "input_folder" con il percorso della cartella contenente le immagini da elaborare
@@ -48,14 +49,16 @@ def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, 
     training_images_array = []
     known_face_encodings = []
     known_face_names = []
-    for filename in os.listdir(training_folder):
-        if filename.endswith(".jpg") or filename.endswith(".png"):
-            img = face_recognition.load_image_file(os.path.join(training_folder, filename))
-            training_images_array.append(img)
-            face_encoding = face_recognition.face_encodings(img)[0]
-            known_face_encodings.append(face_encoding)
-            face_name = Path(filename).stem
-            known_face_names.append(face_name)
+    dir = os.listdir(training_folder)
+    if len(dir) > 0:
+        for filename in dir:
+            if filename.endswith(".jpg") or filename.endswith(".png"):
+                img = face_recognition.load_image_file(os.path.join(training_folder, filename))
+                training_images_array.append(img)
+                face_encoding = face_recognition.face_encodings(img)[0]
+                known_face_encodings.append(face_encoding)
+                face_name = Path(filename).stem
+                known_face_names.append(face_name)
 
     # Assegna ad ogni volto conosciuto un'immagine da utilizzare per la sostituzione tramite un dizionario
     faces_for_substitution = []
@@ -71,6 +74,9 @@ def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, 
         faces_dictionary[face_name] = estrai_volto_da_immagine(sub_image_path)
         index += 1
 
+    generic_image = None
+    if(generic_image_path != ""):
+        generic_image = Image.open(generic_image_path)
     # Load a sample picture and learn how to recognize it.
     # Cicla attraverso tutte le immagini nella cartella di input
     for filename in os.listdir(video_frame_folder):
@@ -94,20 +100,26 @@ def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, 
             # Loop through each face found in the unknown image
             for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
                 # See if the face is a match for the known face(s)
-                matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
                 name = "Unknown"
 
-                face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
-                best_match_index = np.argmin(face_distances)
-                if matches[best_match_index]:
-                    name = known_face_names[best_match_index]
-                    print(name)
+                if len(known_face_encodings) > 0:
+                    matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
+                    face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
+                    best_match_index = np.argmin(face_distances)
+                    if matches[best_match_index]:
+                        name = known_face_names[best_match_index]
+
+                print(name)
 
                 if name in faces_dictionary:
                     #volto_da_estrarre_path = os.path.join(sub_images_folder, faces_dictionary[name])
                     myimage = faces_dictionary[name]
+                elif name == "Unknown":
+                    if(generic_image != None):
+                        myimage = generic_image
                 else:
                     break
+
 
                 volto_ritagliato = pil_image.crop((left, top, right, bottom))
                 volto_ritagliato.convert("RGBA")
