@@ -55,8 +55,11 @@ def get_framerate(video_input):
         video_input
     ]
 
-    result = subprocess.run(comando, capture_output = True, text = True)
-    framerate = result.stdout
+    if ".mpg" in video_input:
+        framerate = "25"
+    else:
+        result = subprocess.run(comando, capture_output = True, text = True)
+        framerate = result.stdout
     print("Il framerate rilevato é: ", framerate)
     return framerate
 
