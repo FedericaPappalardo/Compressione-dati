@@ -4,7 +4,6 @@ import numpy as np
 import os
 from pathlib import Path
 
-#-----
 def estrai_volto_da_immagine(volto_da_estrarre_path):
     # Carica l'immagine contenente il volto da estrarre
     immagine = face_recognition.load_image_file(volto_da_estrarre_path)
@@ -102,6 +101,7 @@ def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, 
                 # See if the face is a match for the known face(s)
                 name = "Unknown"
 
+                # Necessario per il funzionamento in caso di sostituzione di tutte le facce senza facce da identificare
                 if len(known_face_encodings) > 0:
                     matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
                     face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
@@ -111,9 +111,10 @@ def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, 
 
                 print(name)
 
+                # Controlla se la faccia trovata corrisponde a qualcuno da indentificare
                 if name in faces_dictionary:
-                    #volto_da_estrarre_path = os.path.join(sub_images_folder, faces_dictionary[name])
                     myimage = faces_dictionary[name]
+                # Se la faccia trovata non corrisponde a nessuno e il programma ha arg -a sostituisci con immagine generica
                 elif name == "Unknown":
                     if(generic_image != None):
                         myimage = generic_image
@@ -125,17 +126,11 @@ def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, 
                 volto_ritagliato.convert("RGBA")
                 myimage = myimage.resize((volto_ritagliato.size))
                 myimage.convert("RGBA")
-                #myimage.show()
                 volto_ritagliato.paste(myimage)
-                #volto_ritagliato.show()
                 pil_image.paste(volto_ritagliato,(left, top, right, bottom))
-
-                #if name=="Unknown":
-                #    immagine_path = "C:\\Compressione-dati-main\Source\\uomo.jpg"
-                #    volto_da_estrarre_path = "C:\\Compressione-dati-main\Source\\uomo.jpg"
 
             file_name = os.path.splitext(os.path.basename(image_path))[0]
             # Crea il percorso per salvare l'immagine modificata
             output_path = os.path.join(output_folder, f"{file_name}_modified.jpg")
-                # You can also save a copy of the new image to disk if you want by uncommenting this line
+            # You can also save a copy of the new image to disk if you want by uncommenting this line
             pil_image.save(output_path)
