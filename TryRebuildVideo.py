@@ -11,7 +11,7 @@ def ricomporre_video_da_frame(frames_folder, audio_file, output_path, framerate 
     comando = [
         'ffmpeg',
         '-framerate', framerate,  # Sostituisci con l'fps corretto, da ottenere tramite la funzione get_framerate
-        '-i', os.path.join(frames_path, 'frame_%04d_modified.jpg'),  # Sostituisci con il pattern corretto
+        '-i', os.path.join(frames_path, 'frame_%04d_modified.png'),  # Sostituisci con il pattern corretto
         '-c:v', 'libx264',
         '-c:a', 'copy',
         '-y',

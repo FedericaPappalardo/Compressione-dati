@@ -33,13 +33,6 @@ def estrai_volto_da_immagine(volto_da_estrarre_path):
 
 def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, output_folder, generic_image_path = ""):
 
-    #-----
-    # Sostituisci "input_folder" con il percorso della cartella contenente le immagini da elaborare
-    #input_folder = "/Users/fede/Desktop/COMPRESSIONE DATI/PROGETTO_MODIFICATO_PATH/Compressione-dati-main/frame_images"
-
-    # Sostituisci "output_folder" con il percorso della nuova cartella in cui salvare le immagini modificate
-    #output_folder = "/Users/fede/Desktop/COMPRESSIONE DATI/PROGETTO_MODIFICATO_PATH/Compressione-dati-main/frame_modificati"
-
     # Assicurati che la cartella di output esista, altrimenti creala
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
@@ -131,6 +124,6 @@ def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, 
 
             file_name = os.path.splitext(os.path.basename(image_path))[0]
             # Crea il percorso per salvare l'immagine modificata
-            output_path = os.path.join(output_folder, f"{file_name}_modified.jpg")
+            output_path = os.path.join(output_folder, f"{file_name}_modified.png")
             # You can also save a copy of the new image to disk if you want by uncommenting this line
             pil_image.save(output_path)

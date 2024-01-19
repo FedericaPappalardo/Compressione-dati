@@ -19,7 +19,7 @@ def estrai_audio(video_input, output_folder):
 
     subprocess.run(comando)
 
-def dividere_in_frame(video_input, output_folder, output_pattern='frame_%04d.jpg', fps=1):
+def dividere_in_frame(video_input, output_folder, output_pattern='frame_%04d.png', fps=1):
     # Estrai l'audio prima di dividere il video
     estrai_audio(video_input, output_folder)
 
