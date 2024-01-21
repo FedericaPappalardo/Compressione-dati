@@ -1,0 +1,27 @@
+\begin{thebibliography}{1}
+
+\bibitem{dlib}
+Dlib c++ library.
+\newblock http://dlib.net.
+
+\bibitem{facerecognition}
+face-recognition.
+\newblock https://pypi.org/project/face-recognition/.
+
+\bibitem{ffmpeg}
+Ffmpeg.
+\newblock https://ffmpeg.org/.
+
+\bibitem{facerecognitionarticle}
+Geitgey Adam.
+\newblock Machine learning is fun! part 4: Modern face recognition with deep
+  learning.
+\newblock
+  https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78.
+
+\bibitem{tesi}
+Damiano Alfonso.
+\newblock {\em Scrambling per Pixel-Replacement su MPEG-1}.
+\newblock PhD thesis, Universitá degli Studi di Salerno.
+
+\end{thebibliography}
