@@ -1,9 +1,12 @@
 import subprocess
 import os
+import shutil
+from pathlib import Path
 
 def estrai_audio(video_input, output_folder):
     # Crea una sottocartella per contenere l'audio
     output_subfolder = output_folder
+
     os.makedirs(output_subfolder, exist_ok=True)
 
     output_path = os.path.join(output_subfolder, 'audio.mkv')
@@ -20,12 +23,22 @@ def estrai_audio(video_input, output_folder):
     subprocess.run(comando)
 
 def dividere_in_frame(video_input, output_folder, output_pattern='frame_%04d.png', fps=1):
+
+    output_subfolder = output_folder
+
+    if(os.path.exists(output_subfolder)):
+        try:
+            path = Path(output_subfolder)
+            shutil.rmtree(path)
+            print("Cartella eliminata")
+        except OSError as o:
+            print(f"Error, {o.strerror}: {path}")
+
+    os.makedirs(output_subfolder, exist_ok=True)
     # Estrai l'audio prima di dividere il video
     estrai_audio(video_input, output_folder)
 
     # Crea una sottocartella per contenere le immagini
-    output_subfolder = output_folder
-    os.makedirs(output_subfolder, exist_ok=True)
 
     # Si dovrebbero eliminare i file giá presenti nella cartella
 

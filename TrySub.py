@@ -2,6 +2,7 @@ import face_recognition
 from PIL import Image, ImageDraw, ImageFilter
 import numpy as np
 import os
+import shutil
 from pathlib import Path
 
 def estrai_volto_da_immagine(volto_da_estrarre_path):
@@ -34,8 +35,16 @@ def estrai_volto_da_immagine(volto_da_estrarre_path):
 def esegui_sostituzione(video_frame_folder, training_folder, sub_images_folder, output_folder, generic_image_path = ""):
 
     # Assicurati che la cartella di output esista, altrimenti creala
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
+
+    if(os.path.exists(output_folder)):
+        try:
+            path = Path(output_folder)
+            shutil.rmtree(path)
+            print("Cartella eliminata")
+        except OSError as o:
+            print(f"Error, {o.strerror}: {path}")
+
+    os.makedirs(output_folder, exist_ok=True)
 
     # Crea gli array per i volti conosciuti
     training_images_array = []
