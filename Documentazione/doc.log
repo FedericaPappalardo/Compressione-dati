@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.19)  21 JAN 2024 20:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.19)  22 JAN 2024 17:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -454,134 +454,139 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 Chapter 1.
-<./img//hog_obama.jpg, id=111, 280.04625pt x 181.67876pt>
-File: ./img//hog_obama.jpg Graphic file (type jpg)
-<use ./img//hog_obama.jpg>
-Package pdftex.def Info: ./img//hog_obama.jpg  used on input line 51.
-(pdftex.def)             Requested size: 131.57474pt x 85.35826pt.
-<./img//landmark.png, id=112, 415.5525pt x 395.4775pt>
-File: ./img//landmark.png Graphic file (type png)
-<use ./img//landmark.png>
-Package pdftex.def Info: ./img//landmark.png  used on input line 56.
-(pdftex.def)             Requested size: 89.69078pt x 85.35826pt.
+[3
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--62
+]
+Underfull \hbox (badness 10000) in paragraph at lines 50--54
 
  []
 
-[3
+<./img//hog_obama.jpg, id=120, 280.04625pt x 181.67876pt>
+File: ./img//hog_obama.jpg Graphic file (type jpg)
+<use ./img//hog_obama.jpg>
+Package pdftex.def Info: ./img//hog_obama.jpg  used on input line 70.
+(pdftex.def)             Requested size: 131.57474pt x 85.35826pt.
+<./img//landmark.png, id=121, 415.5525pt x 395.4775pt>
+File: ./img//landmark.png Graphic file (type png)
+<use ./img//landmark.png>
+Package pdftex.def Info: ./img//landmark.png  used on input line 75.
+(pdftex.def)             Requested size: 89.69078pt x 85.35826pt.
 
-] [4 <./img//hog_obama.jpg> <./img//landmark.png (PNG copy)>] [5{/usr/share/tex
-mf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 60--81
+
+ []
+
+[4{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [5 <./img/
+/hog_obama.jpg> <./img//landmark.png (PNG copy)>] [6]
 Chapter 2.
 
-Overfull \hbox (11.6395pt too wide) in paragraph at lines 100--101
+Overfull \hbox (11.6395pt too wide) in paragraph at lines 119--120
 \OT1/cmr/m/n/10 L'intero pro-cesso di ma-nipo-lazione del video e[] or-ches-tra
 to at-traverso l'utilizzo
  []
 
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
-) [6
+) [7
 
-] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 161--163
+] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
 
  []
 
-[8]
-Overfull \hbox (2.93585pt too wide) in paragraph at lines 206--207
+[9]
+Overfull \hbox (2.93585pt too wide) in paragraph at lines 225--226
 \OT1/cmr/m/n/10 trarre un volto da un'immagine. Es-egue i vari passi per l'estr
 azione dell'immagine
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 2
-16.
+35.
 (/usr/share/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 216.
- [9]
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 235.
+ [10]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 2
-34.
+53.
 
 (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 234.
- [10] [11] [12] [13]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 253.
+ [11] [12] [13] [14]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--344
+Underfull \hbox (badness 10000) in paragraph at lines 361--363
 
  []
 
-<./img//frame_obama_biden.png, id=333, 578.16pt x 1027.84pt>
+<./img//frame_obama_biden.png, id=342, 578.16pt x 1027.84pt>
 File: ./img//frame_obama_biden.png Graphic file (type png)
 <use ./img//frame_obama_biden.png>
-Package pdftex.def Info: ./img//frame_obama_biden.png  used on input line 349.
+Package pdftex.def Info: ./img//frame_obama_biden.png  used on input line 368.
 (pdftex.def)             Requested size: 96.02747pt x 170.71652pt.
-<./img//frame_obama_biden_sub.png, id=334, 578.16pt x 1027.84pt>
+<./img//frame_obama_biden_sub.png, id=343, 578.16pt x 1027.84pt>
 File: ./img//frame_obama_biden_sub.png Graphic file (type png)
 <use ./img//frame_obama_biden_sub.png>
 Package pdftex.def Info: ./img//frame_obama_biden_sub.png  used on input line 3
-53.
+72.
 (pdftex.def)             Requested size: 96.02747pt x 170.71652pt.
-<./img//frame_cena.png, id=335, 353.32pt x 240.9pt>
+<./img//frame_cena.png, id=344, 353.32pt x 240.9pt>
 File: ./img//frame_cena.png Graphic file (type png)
 <use ./img//frame_cena.png>
-Package pdftex.def Info: ./img//frame_cena.png  used on input line 364.
+Package pdftex.def Info: ./img//frame_cena.png  used on input line 383.
 (pdftex.def)             Requested size: 165.59853pt x 112.90688pt.
-<./img//frame_cena_sub.png, id=336, 353.32pt x 240.9pt>
+<./img//frame_cena_sub.png, id=345, 353.32pt x 240.9pt>
 File: ./img//frame_cena_sub.png Graphic file (type png)
 <use ./img//frame_cena_sub.png>
-Package pdftex.def Info: ./img//frame_cena_sub.png  used on input line 368.
+Package pdftex.def Info: ./img//frame_cena_sub.png  used on input line 387.
 (pdftex.def)             Requested size: 165.59853pt x 112.90688pt.
-[14
+[15
 
  <./img//frame_obama_biden.png (PNG copy)> <./img//frame_obama_biden_sub.png>]
-Overfull \hbox (1.21184pt too wide) in paragraph at lines 390--394
+Overfull \hbox (1.21184pt too wide) in paragraph at lines 409--413
 \OT1/cmr/m/n/10 Possiamo no-tare un tempo sig-ni-fica-ti-va-mente mag-giore per
  il video biden[]obama,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--394
+Underfull \hbox (badness 10000) in paragraph at lines 409--413
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--397
+Underfull \hbox (badness 10000) in paragraph at lines 414--416
 
  []
 
-[15 <./img//frame_cena.png> <./img//frame_cena_sub.png>]
+[16 <./img//frame_cena.png> <./img//frame_cena_sub.png>]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--402
+Underfull \hbox (badness 10000) in paragraph at lines 418--421
 
  []
 
-(./doc.bbl [16
+(./doc.bbl [17
 
-]) [17
+]) [18
 
 ] (./doc.aux)
 Package rerunfilecheck Info: File `doc.out' has not changed.
-(rerunfilecheck)             Checksum: 115CC543558BAAAFD50457C98E5A7B28;1012.
+(rerunfilecheck)             Checksum: B68FCFEE4096BA43FA1AE0170CC2BFE8;1063.
  ) 
 Here is how much of TeX's memory you used:
- 16119 strings out of 477985
- 248114 string characters out of 5840058
+ 16122 strings out of 477985
+ 248145 string characters out of 5840058
  2030388 words of memory out of 5000000
- 35894 multiletter control sequences out of 15000+600000
+ 35895 multiletter control sequences out of 15000+600000
  518812 words of font info for 53 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,9n,76p,1222b,3362s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -594,10 +599,10 @@ share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1
 /public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
 r/sfti1000.pfb>
-Output written on doc.pdf (18 pages, 1992266 bytes).
+Output written on doc.pdf (19 pages, 1994842 bytes).
 PDF statistics:
- 451 PDF objects out of 1000 (max. 8388607)
- 399 compressed objects within 4 object streams
- 212 named destinations out of 1000 (max. 500000)
- 179 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 462 PDF objects out of 1000 (max. 8388607)
+ 408 compressed objects within 5 object streams
+ 214 named destinations out of 1000 (max. 500000)
+ 187 words of extra memory for PDF output out of 10000 (max. 10000000)
 

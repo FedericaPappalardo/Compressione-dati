@@ -37,6 +37,25 @@ Con il conseguente aumento della risoluzione dei video, ci troviamo di fronte al
 
 La compressione video non si limita, dunque, a ridurre le dimensioni dei file per una gestione più efficiente dello spazio di archiviazione, ma svolge un ruolo cruciale per la protezione della privacy individuale. Nel tentativo di affrontare questa sfida, progetti precedenti hanno cercato di implementare soluzioni di manipolazione video mostrando alcune limitazioni. Ad esempio, il progetto “mpeg-scrambling” si è concentrato sulla manipolazione dei video utilizzando lo standard MPEG1, il quale non è più comunemente utilizzato. Limitandosi esclusivamente ai video in tale formato, le sue applicazioni erano ristrette e non allineate alle esigenze dell’ampio spettro di formati video attuali. Inoltre, la mancanza di un adeguato riconoscimento dei volti e la scarsa precisione nell’inserimento delle modifiche visive hanno rappresentato limiti sostanziali. Queste lacune evidenziano l’opportunità di una ricerca più approfondita nel campo della manipolazione video. Nel presente lavoro, ci proponiamo di superare queste limitazioni ampliando la compatibilità dei formati video, migliorando il rilevamento dei volti e perfezionando l’inserimento delle modifiche visive.
 
+\section{MPEG}
+MPEG descrive un gruppo di metodi standardizzati di compressione video, ed é lo standard piú ampiamente supportato al giorno d'oggi. Prevede standard per compressione lossy e lossless. \\
+I video MPEG lossy sono composti da tre particolari tipi di fotogrammi:
+
+\begin{itemize}
+        \item{I-Frame, i quali sono compressi utilizzando solo i dati presenti nel fotogramma stesso, le cui tecniche di compressione sono dette intra-frame;}
+        \item{P-Frame, i quali cono compressi utilizzando le informazioni presenti nei fotogrammi precedenti, le cui tecniche di compressione sono dette inter-frame;}
+        \item{B-Frame, i quali sono compressi utilizzando le informazioni presenti nei fotogrammi precedenti e i fotogrammi successivi.}
+\end{itemize}
+
+Per ogni fotogramma sono presenti tre matrici: Y, I e Q per video di formato NTSC e Y, U e V per video di formato PAL. La matrice Y rappresenta la luminanza del fotogramma, e le altre due rappresentano la crominanza. Le matrici relative alla crominanza hanno le assi con lunghezza pari alla metá delle assi relative alla matrice sulla luminanza. \\
+I dati presenti nelle matrici sono raggruppati in macroblocchi 8x8, i quali subiscono trasformazioni della famiglia DCT (Discrete Cosine Transform), in particolare FDCT se ci si trova in fase di codifica e IDCT se ci si trova in fase di decodifica, e di quantizzazione, la quale approssima i valori relativi al macroblocco ad un intero di un range limitato. \\
+I frame con compressione intra-frame utilizzano algoritmi simili alla compressione JPEG, contenenti i dati relativi all'immagine completa. Questi frame sono presenti quando l'errore dei P-frame e B-frame sono troppo alti, o quando ci sono cambi di scena. \\
+I frame con compressione inter-frame codificano le differenze tra i frame consecutivi calcolando i vettori di moto dei macroblocchi dei frame adiacenti e provando ad interpolarne la posizione del blocco nel frame da codificare. \\
+
+%Lo standard MPEG prevede la stratificazione della struttura del file: in cima alla gerarchia si trova la sequenza del video, con un header contenente informazioni come frame rate e dimensione delle immagini. La sequenza é divisa in GOP, of Picture, le quali sono composte dai singoli frame. I frame sono composti da tre componenti rappresentanti luminanza e crominanza. \\
+%I frame sono suddivisi in slice, i quali header contengono informazioni relative alla sincronizzazione e al controllo degli errori. Le slice contengono un numero intero di macroblocchi.
+
+
 \section{Face Recognition}
 Gli algoritmi di Face Recognition sono algoritmi con lo scopo di riconoscere i volti presenti in un’immagine. \\
 L’algoritmo utilizzato si basa su un metodo chiamato \textit{Histogram of Oriented Gradients}, comunemente detto HOG. \\
