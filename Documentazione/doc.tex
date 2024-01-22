@@ -22,9 +22,9 @@
 \thispagestyle{empty}
 \thispagestyle{empty}
 \chapter*{Abstract}
-Con l’avanzare della tecnologia la risoluzione dei video tende ad aumentare sempre di più, comportando un aumento delle dimensioni dei file. A tal proposito la compressione video è di fondamentale importanza per poter gestire il traffico video, riducendo i requisiti di spazio di archiviazione e, nel contempo, cercando di mantenere una qualità quanto più ottimale possibile. Per ciò che concerne questo lavoro di progetto, che affronta problematiche relative alla manipolazione dei fotogrammi di un video e alla sostituzione dei volti, è altamente probabile che le dimensioni complessive del video aumentino notevolmente; inoltre l’introduzione di manipolazioni visive solleva importanti questioni etiche e legali. L’implementazione di tecniche di compressione non solo riduce le dimensioni del file, facilitando la gestione del video risultante in termini di spazio di archiviazione, ma svolge anche un ruolo importante nella protezione della privacy.
+Con l’avanzare della tecnologia la popolariá dei contenuti video é in continua crescita, portando anche ad un aumento della risoluzione dei video, dal quale ne segue un aumento delle dimensioni dei file. A tal proposito la compressione video è di fondamentale importanza per poter gestire il traffico video, riducendo i requisiti di spazio di archiviazione e, nel contempo, cercando di mantenere una qualità quanto più ottimale possibile. Per ciò che concerne questo lavoro di progetto, che affronta problematiche relative alla manipolazione dei fotogrammi di un video compresso e alla sostituzione dei volti, è altamente probabile che si possa avere a che fare con video di notevole dimensione; inoltre l’introduzione di manipolazioni visive solleva importanti questioni etiche e legali. L’implementazione di tecniche di compressione non solo riduce le dimensioni del file, facilitando la gestione del video risultante in termini di spazio di archiviazione, ma puó rendere piú complessa la manipolazione dei contenuti. \\
 
-Il progetto proposto sviluppa un’applicazione in grado di manipolare video attraverso una serie di elaborazioni avanzate. L’approccio adottato è stato quello di implementare tre “moduli”, uno che si occupa dell’estrazione dei fotogrammi dal video e del relativo audio, un altro che si occupa del rilevamento dei volti e della loro sostituzione per ciascun fotogramma, e un altro che si occupa di ricostruire il video con i frame modificati; tutto ciò viene automatizzato in un’unica esecuzione dando in input un video, cosicché il programma restituisca in output il video risultante con i volti sostituiti rispetto a quelli presenti nel file multimediale originale.
+Il progetto proposto sviluppa un’applicazione in grado di manipolare video attraverso una serie di elaborazioni avanzate. L’approccio adottato è stato quello di implementare tre “moduli”, uno che si occupa dell’estrazione dei fotogrammi dal video e del relativo audio, uno che si occupa del rilevamento e identificazione dei volti e della loro sostituzione per ciascun fotogramma, e un altro che si occupa di ricostruire il video con i frame modificati; tutto ciò viene automatizzato in un’unica esecuzione dando in input un video, cosicché il programma restituisca in output il video risultante con i volti sostituiti rispetto a quelli presenti nel file multimediale originale.
 
 
 \thispagestyle{empty}
@@ -33,9 +33,9 @@ Il progetto proposto sviluppa un’applicazione in grado di manipolare video att
 
 \chapter{Introduzione}
 
-Con il conseguente aumento della risoluzione dei video, ci troviamo di fronte alla sfida di gestire in modo efficiente il crescente volume di dati video senza compromettere la qualità visiva. Questa problematica è al centro del presente lavoro, che si propone di affrontare le sfide connesse alla manipolazione dei fotogrammi di un video e alla sostituzione dei volti, tenendo conto del fatto che ciò solleva importanti questioni relative alla privacy delle persone coinvolte. In un contesto in cui la condivisione di video può coinvolgere soggetti non consenzienti o situazioni sensibili, la manipolazione dei volti diventa un mezzo essenziale per garantire l’anonimato e la riservatezza.
+Con il conseguente aumento della risoluzione dei video, ci si trova di fronte alla sfida di gestire in modo efficiente il crescente volume di dati video senza compromettere la qualità visiva. Questa problematica è al centro del presente lavoro, che si propone di affrontare le sfide connesse alla manipolazione dei fotogrammi di un video e alla sostituzione dei volti, tenendo conto del fatto che ciò solleva importanti questioni relative alla privacy delle persone coinvolte. In un contesto in cui la condivisione di video può coinvolgere soggetti non consenzienti o situazioni sensibili, la manipolazione dei volti diventa un mezzo essenziale per garantire l’anonimato e la riservatezza.
 
-La compressione video non si limita, dunque, a ridurre le dimensioni dei file per una gestione più efficiente dello spazio di archiviazione, ma svolge un ruolo cruciale per la protezione della privacy individuale. Nel tentativo di affrontare questa sfida, progetti precedenti hanno cercato di implementare soluzioni di manipolazione video mostrando alcune limitazioni. Ad esempio, il progetto “mpeg-scrambling” si è concentrato sulla manipolazione dei video utilizzando lo standard MPEG1, il quale non è più comunemente utilizzato. Limitandosi esclusivamente ai video in tale formato, le sue applicazioni erano ristrette e non allineate alle esigenze dell’ampio spettro di formati video attuali. Inoltre, la mancanza di un adeguato riconoscimento dei volti e la scarsa precisione nell’inserimento delle modifiche visive hanno rappresentato limiti sostanziali. Queste lacune evidenziano l’opportunità di una ricerca più approfondita nel campo della manipolazione video. Nel presente lavoro, ci proponiamo di superare queste limitazioni ampliando la compatibilità dei formati video, migliorando il rilevamento dei volti e perfezionando l’inserimento delle modifiche visive.
+La compressione video dá il beneficio di ridurre le dimensioni dei file per una gestione più efficiente dello spazio di archiviazione e il traffico, puó portare a problematiche nella manipolazione del video, a causa della risoluzione sempre in crescita che porta a tempi di elaborazione crescenti e dai possibili artefatti causati dalla compressione. Nel tentativo di affrontare questa sfida, progetti precedenti hanno cercato di implementare soluzioni di manipolazione video mostrando alcune limitazioni. Ad esempio, il progetto “mpeg-scrambling” si è concentrato sulla manipolazione dei video utilizzando lo standard MPEG1, il quale non è più comunemente utilizzato. Limitandosi esclusivamente ai video in tale formato, le sue applicazioni erano ristrette e non allineate alle esigenze dell’ampio spettro di formati video attuali. Inoltre, la mancanza di un adeguato riconoscimento dei volti e la scarsa precisione nell’inserimento delle modifiche visive hanno rappresentato limiti sostanziali. Queste lacune evidenziano la necessità di una ricerca più approfondita nel campo della manipolazione video. Nel presente lavoro, ci proponiamo di superare queste limitazioni ampliando la compatibilità dei formati video, migliorando il rilevamento dei volti e perfezionando l’inserimento delle modifiche visive.
 
 \section{MPEG}
 MPEG descrive un gruppo di metodi standardizzati di compressione video, ed é lo standard piú ampiamente supportato al giorno d'oggi. Prevede standard per compressione lossy e lossless. \\
@@ -122,7 +122,8 @@ Il progetto si suddivide in 3 fasi principali:
 Il progetto é stato implementato utilizzando quattro file. Il file Main.py ha lo scopo di prendere in input la directory del file video e un flag opzionale che specifica di effettuare la sostituzione anche ai volti non conosciuti. \\
 Nell'esecuzione, le computazioni sono effettuate dai file TryFFMPEG, TrySub e TryRebuild.
 \subsection{TryFFMPEG.py}
-\begin{lstlisting}[language=Python, breaklines=true]
+\begin{lstlisting}[language=Python, breaklines=true, frame=single]
+def estrai_audio(video_input, output_folder):
 # Crea una sottocartella per contenere l'audio
 output_subfolder = output_folder
 os.makedirs(output_subfolder, exist_ok=True)
@@ -155,7 +156,8 @@ Il comando da eseguire sarà formato da:
         il percorso del file di output risultante dopo la conversione.
 \end{itemize}
 
-\begin{lstlisting}[language=Python, breaklines=true]
+\begin{lstlisting}[language=Python, breaklines=true, frame=single]
+def dividere_in_frame(video_input, output_folder, output_pattern='frame_%04d.png', fps=1):
 # Estrai l'audio prima di dividere il video
 estrai_audio(video_input, output_folder)
 
@@ -194,7 +196,7 @@ Il comando da eseguire, in questo caso, sarà composto da: \\
 
 \subsection{TrySub.py}
 
-\begin{lstlisting}[language=Python, breaklines=true]
+\begin{lstlisting}[language=Python, breaklines=true, frame=single]
 def estrai_volto_da_immagine(volto_da_estrarre_path):
 # Carica l'immagine contenente il volto da estrarre
 immagine = face_recognition.load_image_file(volto_da_estrarre_path)
@@ -226,7 +228,7 @@ La funzione estrai\_volto\_da\_immagine(volto\_da\_estrarre\_path) ha lo scopo d
 
 La funzione seguente, esegui\_sostituzione(video\_frame\_folder, training\_folder, sub\_images\_folder, output\_folder, generic\_image\_path = ""), é soddivisibile in diverse parti:
 
-\begin{lstlisting}[language=Python, breaklines=true]
+\begin{lstlisting}[language=Python, breaklines=true, frame=single]
 # Crea gli array per i volti conosciuti
 training_images_array = []
 known_face_encodings = []
@@ -244,7 +246,7 @@ if len(dir) > 0:
 \end{lstlisting}
 In questa parte sono caricate le immagini dei volti conosciuti e ne sono calcolati gli encoding. I valori sono dunque salvati in un array. Un array parallelo si conserva i nomi (presi dal nome del file dell'immagine).
 
-\begin{lstlisting}[language=Python, breaklines=true]
+\begin{lstlisting}[language=Python, breaklines=true, frame=single]
 faces_for_substitution = []
 for f in os.listdir(sub_images_folder):
     if f.endswith(".jpg") or f.endswith(".png"):
@@ -260,7 +262,7 @@ for face_name in known_face_names:
 \end{lstlisting}
 In questa parte ad ogni volto conosciuto è assegnato un volto da utilizzare per la sostituzione tramite un dizionario.
 
-\begin{lstlisting}[language=Python, breaklines=true]
+\begin{lstlisting}[language=Python, breaklines=true, frame=single]
 for filename in os.listdir(video_frame_folder):
     if filename.endswith(".jpg") or filename.endswith(".png"):
         image_path = os.path.join(video_frame_folder, filename)
@@ -317,11 +319,12 @@ for filename in os.listdir(video_frame_folder):
         \end{minted}
 \end{lstlisting}
 Questa parte é la parte principale della sostituzione: per ogni frame del video si effettua il riconoscimento dei volti presenti nel video e si calcolano gli encoding degli eventuali volti. \\
-Gli encoding sono successivamente confrontati con i valori estratti in precedenza, per riconoscere se è presente un match tra i due. Se il match è presente, si effettua la sostituzione del volto conosciuto con il volto associato al quel nome nella fase precedente, altrimenti si valuta se è stato impostato il flag di sostituzione dei volti sconosciuti: se è stato impostato, si sostituisce il volto con l'immagine generica, altrimenti si ignora.
+Gli encoding sono successivamente confrontati con i valori estratti in precedenza, per riconoscere se è presente un match tra i due. Se il match è presente, si effettua la sostituzione del volto conosciuto con il volto associato al quel nome nella fase precedente, altrimenti si valuta se è stato impostato il flag di sostituzione dei volti sconosciuti: se è stato impostato, si sostituisce il volto con l'immagine generica, altrimenti si ignora. \\
+I volti sostituiti, inoltre, sono anche ridimensionati in base alle dimensioni del volto originale. \\
 
 \subsection{TryRebuild.py}
 Questo file contiene una sola funzione, con lo scopo di ricomporre il video partendo dai frame sostituiti:
-\begin{lstlisting}[language=Python, breaklines=true]
+\begin{lstlisting}[language=Python, breaklines=true, frame=single]
 frames_path = frames_folder
 
 comando = [
